@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>up / down</title>
+  </head>
+  <body style="background-color: #333;
+  margin: 0;
+  " onkeydown="key()">
+    <div
+      id="box"
+      style="
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        margin-top: 100px;
+      "
+    ></div>
+    <script> 
+    function key() {
+        if(event.code=='ArrowUp') {
+            moveUp()
+        } else if(event.code=='ArrowDown') {
+            moveDown()
+        }
+    }
+     function moveUp() {
+        const STEP=50
+          let mt = parseInt(box.style.marginTop)       
+          if (mt>0 || 0){
+              mt-=STEP
+              box.style.marginTop = mt + "px"
+          }
+     }
+      function moveDown() {
+        const STEP=50
+        let mt = parseInt(box.style.marginTop) 
+         mt+=STEP 
+         box.style.marginTop = mt + "px"
+        }
+    </script>
+   <!-- <button onclick="moveUp()">up</button>
+    <button onclick="moveDown()">down</button>-->
+  </body>
+</html>
